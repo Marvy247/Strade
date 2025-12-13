@@ -1,3 +1,6 @@
+import Link from 'next/link';
+import { Github, ExternalLink } from 'lucide-react';
+
 export default function Footer() {
   return (
     <footer className="bg-slate-50 border-t mt-16">
@@ -14,26 +17,69 @@ export default function Footer() {
           <div>
             <h4 className="font-semibold text-slate-900 mb-4">Quick Links</h4>
             <ul className="space-y-2 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-slate-900">Marketplace</a></li>
-              <li><a href="#" className="hover:text-slate-900">How it Works</a></li>
-              <li><a href="#" className="hover:text-slate-900">FAQ</a></li>
-              <li><a href="#" className="hover:text-slate-900">Support</a></li>
+              <li>
+                <Link href="/" className="hover:text-slate-900 transition-colors">
+                  Marketplace
+                </Link>
+              </li>
+              <li>
+                <Link href="/my-listings" className="hover:text-slate-900 transition-colors">
+                  My Listings
+                </Link>
+              </li>
+              <li>
+                <Link href="/help" className="hover:text-slate-900 transition-colors">
+                  Help & FAQ
+                </Link>
+              </li>
             </ul>
           </div>
 
           <div>
-            <h4 className="font-semibold text-slate-900 mb-4">Community</h4>
+            <h4 className="font-semibold text-slate-900 mb-4">Resources</h4>
             <ul className="space-y-2 text-sm text-slate-600">
-              <li><a href="#" className="hover:text-slate-900">Discord</a></li>
-              <li><a href="#" className="hover:text-slate-900">Twitter</a></li>
-              <li><a href="#" className="hover:text-slate-900">GitHub</a></li>
-              <li><a href="#" className="hover:text-slate-900">Blog</a></li>
+              <li>
+                <a 
+                  href="https://www.stacks.co/" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-900 transition-colors inline-flex items-center gap-1"
+                >
+                  Stacks Blockchain
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://explorer.hiro.so/?chain=testnet" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-900 transition-colors inline-flex items-center gap-1"
+                >
+                  Testnet Explorer
+                  <ExternalLink className="h-3 w-3" />
+                </a>
+              </li>
+              <li>
+                <a 
+                  href="https://github.com" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="hover:text-slate-900 transition-colors inline-flex items-center gap-1"
+                >
+                  <Github className="h-3 w-3" />
+                  GitHub
+                </a>
+              </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-slate-200 mt-8 pt-8 text-center text-sm text-slate-600">
           <p>&copy; 2024 Strade. Built on Stacks blockchain. All rights reserved.</p>
+          <p className="mt-2 text-xs text-slate-500">
+            Testnet version - For demonstration purposes only
+          </p>
         </div>
       </div>
     </footer>

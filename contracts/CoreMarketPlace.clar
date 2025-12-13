@@ -96,7 +96,7 @@
   (let
     (
       (listing-id (increment-listing-id))
-      (expires-at (+ block-height duration))
+      (expires-at (+ stacks-block-height duration))
     )
     (asserts! (is-valid-price price) (err ERR_INVALID_PRICE))
     (asserts! (is-valid-string name u64) (err ERR_INVALID_INPUT))
@@ -110,7 +110,7 @@
         description: description,
         price: price,
         status: "active",
-        created-at: block-height,
+        created-at: stacks-block-height,
         expires-at: expires-at
       }
     )
@@ -185,7 +185,7 @@
         (seller (get seller listing))
       )
       (asserts! (is-eq (get status listing) "active") (err ERR_INVALID_STATUS))
-      (asserts! (<= block-height (get expires-at listing)) (err ERR_LISTING_EXPIRED))
+      (asserts! (<= stacks-block-height (get expires-at listing)) (err ERR_LISTING_EXPIRED))
       (asserts! (is-valid-seller seller) (err ERR_INVALID_SELLER))
       (match (stx-transfer? price tx-sender seller)
         success (begin

@@ -4,12 +4,17 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import TestnetBanner from '@/components/TestnetBanner';
 import ListingCard from '@/components/ListingCard';
-import { getListings, userSession, Listing } from '@/lib/stacks';
+import { ListingGridSkeleton } from '@/components/LoadingSkeleton';
+import { getListings, userSession, Listing, contractAddress, contractName } from '@/lib/stacks';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
 import { Package, TrendingUp, Clock, CheckCircle, XCircle } from 'lucide-react';
+import { toast } from 'sonner';
+import { openContractCall } from '@stacks/connect';
+import { uintCV } from '@stacks/transactions';
 
 type StatusFilter = 'all' | 'active' | 'sold' | 'expired';
 
@@ -43,8 +48,50 @@ export default function MyListings() {
       setListings(myListings);
     } catch (error) {
       console.error('Error loading listings:', error);
+      toast.error('Failed to load your listings');
     } finally {
       setLoading(false);
+    }
+  };
+
+  const handleCancelListing = async (listingId: number) => {
+    if (!userSession.isUserSignedIn()) {
+      toast.error('Please connect your wallet first');
+      return;
+    }
+
+    const functionArgs = [uintCV(listingId)];
+
+    const options = {
+      contractAddress,
+      contractName,
+      functionName: 'cancel-listing',
+      functionArgs,
+      appDetails: {
+        name: 'Strade',
+        icon: window.location.origin + '/favicon.ico',
+      },
+      onFinish: (result: { txId: string; stacksTransaction: unknown }) => {
+        console.log('Cancel transaction finished:', result);
+        toast.success('Listing cancelled successfully!', {
+          description: `Transaction ID: ${result.txId.slice(0, 10)}...`,
+        });
+        // Reload listings after successful cancellation
+        const userData = userSession.loadUserData();
+        const address = userData.profile.stxAddress.testnet;
+        setTimeout(() => loadMyListings(address), 3000);
+      },
+      onCancel: () => {
+        toast.info('Cancellation cancelled');
+      },
+    };
+
+    try {
+      toast.loading('Cancelling listing...');
+      await openContractCall(options);
+    } catch (error) {
+      console.error('Error cancelling listing:', error);
+      toast.error('Failed to cancel listing');
     }
   };
 
@@ -148,12 +195,13 @@ export default function MyListings() {
   if (loading) {
     return (
       <div className="min-h-screen bg-slate-50 flex flex-col">
+        <TestnetBanner />
         <Header />
         <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
-          <div className="text-center py-12">
-            <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-slate-900 mx-auto"></div>
-            <p className="mt-4 text-slate-600">Loading your listings...</p>
+          <div className="mb-8">
+            <h1 className="text-3xl font-bold text-slate-900 mb-2">My Listings</h1>
           </div>
+          <ListingGridSkeleton count={6} />
         </main>
         <Footer />
       </div>
@@ -162,6 +210,7 @@ export default function MyListings() {
 
   return (
     <div className="min-h-screen bg-slate-50 flex flex-col">
+      <TestnetBanner />
       <Header />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
@@ -246,6 +295,7 @@ export default function MyListings() {
                       </div>
                       <ListingCard
                         listing={listing}
+                        onCancel={handleCancelListing}
                         isOwner={true}
                       />
                     </div>

@@ -120,7 +120,7 @@
         counterparty: counterparty,
         reason: reason,
         status: "open",
-        created-at: block-height,
+        created-at: stacks-block-height,
         votes-for: u0,
         votes-against: u0,
         resolution: none
@@ -144,7 +144,7 @@
     (asserts! (is-valid-dispute-id dispute-id) (err ERR_INVALID_DISPUTE_ID))
     (asserts! (is-arbitrator tx-sender) (err ERR_NOT_ARBITRATOR))
     (asserts! (is-eq (get status dispute) "open") (err ERR_VOTING_CLOSED))
-    (asserts! (<= (- block-height (get created-at dispute)) VOTING_PERIOD) (err ERR_VOTING_CLOSED))
+    (asserts! (<= (- stacks-block-height (get created-at dispute)) VOTING_PERIOD) (err ERR_VOTING_CLOSED))
     (asserts! (not (has-voted dispute-id tx-sender)) (err ERR_ALREADY_VOTED))
     (try! (update-vote-count dispute-id vote))
     (map-set ArbitratorVotes { dispute-id: dispute-id, arbitrator: tx-sender } vote)
@@ -164,7 +164,7 @@
     (asserts! (is-valid-dispute-id dispute-id) (err ERR_INVALID_DISPUTE_ID))
     (asserts! (is-eq (get status dispute) "open") (err ERR_INVALID_STATE))
     (asserts! (>= (+ (get votes-for dispute) (get votes-against dispute)) MIN_VOTES_REQUIRED) (err ERR_INSUFFICIENT_VOTES))
-    (asserts! (<= (- block-height (get created-at dispute)) VOTING_PERIOD) (err ERR_VOTING_CLOSED))
+    (asserts! (<= (- stacks-block-height (get created-at dispute)) VOTING_PERIOD) (err ERR_VOTING_CLOSED))
     (let
       (
         (resolution (if (> (get votes-for dispute) (get votes-against dispute)) "for_initiator" "for_counterparty"))

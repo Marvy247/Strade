@@ -6,7 +6,7 @@ export const network = STACKS_TESTNET;
 export const appConfig = new AppConfig(['store_write', 'publish_data']);
 export const userSession = new UserSession({ appConfig });
 
-export const contractAddress = 'ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM';
+export const contractAddress = 'STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF';
 
 // Contract addresses for deployed contracts
 export const CONTRACTS = {
@@ -29,6 +29,7 @@ export interface Listing {
   status: string;
   createdAt: number;
   expiresAt: number;
+  imageUrl?: string;
 }
 
 export const getListings = async (includeAll: boolean = false): Promise<Listing[]> => {
@@ -85,3 +86,16 @@ export const formatSTX = (microSTX: number): string => {
 export const formatAddress = (address: string): string => {
   return `${address.slice(0, 6)}...${address.slice(-4)}`;
 };
+
+export const getUserBalance = async (address: string): Promise<number> => {
+  try {
+    const response = await fetch(
+      `https://api.testnet.hiro.so/extended/v1/address/${address}/stx`
+    );
+    const data = await response.json();
+    return Number(data.balance);
+  } catch (error) {
+    console.error('Error fetching balance:', error);
+    return 0;
+  }
+};;

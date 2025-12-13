@@ -152,7 +152,7 @@
         username: validated-username,
         bio: validated-bio,
         email: validated-email,
-        registration-date: block-height,
+        registration-date: stacks-block-height,
         total-ratings: u0,
         rating-sum: u0,
         reputation-score: u0

@@ -2,43 +2,51 @@
 
 ## Deployment Summary
 
-✅ **All contracts successfully deployed to Stacks Testnet!**
+✅ **All contracts successfully deployed to Stacks Testnet with Clarity 4!**
 
-**Deployment Date:** [Current Date]
+**Deployment Date:** December 13, 2025
 **Network:** Stacks Testnet
-**Deployer Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+**Deployer Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+**Clarity Version:** 3 (Clarity 4)
+**Epoch:** 3.0
 **Total Cost:** 0.427370 STX
 
 ## Deployed Contracts
 
 ### 1. CoreMarketPlace
-- **Contract Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM.CoreMarketPlace
-- **Transaction ID:** 39106bbd123026efa9c15dc1042e41854c5a985efac9ae8828
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.CoreMarketPlace
+- **Transaction ID:** 0x48c4c676f7e128fe5d231efb395390e541aff7457db1aaef9571
 - **Cost:** 0.087570 STX
 - **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0x48c4c676f7e128fe5d231efb395390e541aff7457db1aaef9571?chain=testnet
 
 ### 2. DisputeResolution_clar
-- **Contract Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM.DisputeResolution_clar
-- **Transaction ID:** f4ea85385c7b3a4ba1491533b43e45ac57314e6867e21c5dfa
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.DisputeResolution_clar
+- **Transaction ID:** 0x6a92bb4aa83ca5a8ff0639c18aec82089425eba94e37bd9d58da
 - **Cost:** 0.109500 STX
 - **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0x6a92bb4aa83ca5a8ff0639c18aec82089425eba94e37bd9d58da?chain=testnet
 
 ### 3. EscrowService
-- **Contract Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM.EscrowService
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.EscrowService
+- **Transaction ID:** 0x9dbe90bb8822de33edf35ed04f18eb7dff914639519a1a67ced9
 - **Cost:** 0.063160 STX
 - **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0x9dbe90bb8822de33edf35ed04f18eb7dff914639519a1a67ced9?chain=testnet
 
 ### 4. UserProfile
-- **Contract Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM.UserProfile
-- **Transaction ID:** 41d12d09288bc344b27daf64a11d977fdc5d4d697043ce2978
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.UserProfile
+- **Transaction ID:** 0xc537afd13d6f968d5af6d0b52566f4d83de4d571e1ebae03116a
 - **Cost:** 0.098010 STX
 - **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0xc537afd13d6f968d5af6d0b52566f4d83de4d571e1ebae03116a?chain=testnet
 
 ### 5. token (BST)
-- **Contract Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM.token
-- **Transaction ID:** cabf6ff9e608b543ad130a2ffd0034022d1792dad878f48a12
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.token
+- **Transaction ID:** 0xa607d0c3f1d6de1b9e9ea4cacd14f737ddd60f2a9f17843a8c9c
 - **Cost:** 0.069130 STX
 - **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0xa607d0c3f1d6de1b9e9ea4cacd14f737ddd60f2a9f17843a8c9c?chain=testnet
 
 ## Contract Details
 
@@ -73,7 +81,7 @@
 
 You can verify the deployment on the Stacks Explorer:
 - **Testnet Explorer:** https://explorer.hiro.so/?chain=testnet
-- **Search Address:** ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+- **Deployer Address:** https://explorer.hiro.so/address/STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF?chain=testnet
 
 ## Next Steps
 

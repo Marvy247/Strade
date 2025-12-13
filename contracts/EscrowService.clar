@@ -61,7 +61,7 @@
   (let
     (
       (escrow-id (+ (var-get last-escrow-id) u1))
-      (expires-at (+ block-height ESCROW_DURATION))
+      (expires-at (+ stacks-block-height ESCROW_DURATION))
     )
     (asserts! (> amount u0) (err ERR_INVALID_AMOUNT))
     (asserts! (is-valid-seller seller) (err ERR_INVALID_SELLER))
@@ -75,7 +75,7 @@
               seller: seller,
               amount: amount,
               state: "locked",
-              created-at: block-height,
+              created-at: stacks-block-height,
               expires-at: expires-at
             }
           )
@@ -102,7 +102,7 @@
       )
       (asserts! (or (is-eq tx-sender CONTRACT_OWNER) (is-eq tx-sender (get buyer escrow))) (err ERR_NOT_AUTHORIZED))
       (asserts! (is-eq (get state escrow) "locked") (err ERR_ALREADY_RELEASED))
-      (asserts! (<= block-height (get expires-at escrow)) (err ERR_ESCROW_EXPIRED))
+      (asserts! (<= stacks-block-height (get expires-at escrow)) (err ERR_ESCROW_EXPIRED))
       (match (as-contract (stx-transfer? amount tx-sender seller))
         success 
           (begin

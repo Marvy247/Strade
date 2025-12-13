@@ -10,37 +10,37 @@ plan:
       transactions:
         - contract-publish:
             contract-name: CoreMarketPlace
-            expected-sender: ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
             cost: 87570
             path: contracts/CoreMarketPlace.clar
             anchor-block-only: true
-            clarity-version: 2
+            clarity-version: 3
         - contract-publish:
             contract-name: DisputeResolution_clar
-            expected-sender: ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
             cost: 109500
             path: contracts/DisputeResolution_clar.clar
             anchor-block-only: true
-            clarity-version: 2
+            clarity-version: 3
         - contract-publish:
             contract-name: EscrowService
-            expected-sender: ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
             cost: 63160
             path: contracts/EscrowService.clar
             anchor-block-only: true
-            clarity-version: 2
+            clarity-version: 3
         - contract-publish:
             contract-name: UserProfile
-            expected-sender: ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
             cost: 98010
             path: contracts/UserProfile.clar
             anchor-block-only: true
-            clarity-version: 2
+            clarity-version: 3
         - contract-publish:
             contract-name: token
-            expected-sender: ST2WFP8G2CTAZWQBRQT2BWBPTH3NB341NMQJGD0KM
+            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
             cost: 69130
             path: contracts/token.clar
             anchor-block-only: true
-            clarity-version: 2
-      epoch: "2.5"
+            clarity-version: 3
+      epoch: "3.0"
