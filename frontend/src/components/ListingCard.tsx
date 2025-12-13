@@ -43,7 +43,6 @@ export default function ListingCard({ listing, onPurchase, onCancel, isOwner }: 
   };
 
   const isExpired = listing.expiresAt < Date.now() / 1000;
-  const canCancel = isOwner && listing.status === 'active' && !isExpired;
 
   return (
     <Card className="h-full flex flex-col hover:shadow-lg transition-shadow">

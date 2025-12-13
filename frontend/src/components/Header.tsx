@@ -5,10 +5,10 @@ import { usePathname } from 'next/navigation';
 import Link from 'next/link';
 import { Button } from '@/components/ui/button';
 import { Avatar, AvatarFallback } from '@/components/ui/avatar';
-import { Badge } from '@/components/ui/badge';
 import { userSession, formatAddress, getUserBalance, formatSTX } from '@/lib/stacks';
 import { Wallet } from 'lucide-react';
 import MobileNav from '@/components/MobileNav';
+import { ThemeToggle } from '@/components/ThemeToggle';
 
 export default function Header() {
   const pathname = usePathname();
@@ -84,8 +84,19 @@ export default function Header() {
               <span
                 className={`px-4 py-2 rounded-md font-medium transition-all cursor-pointer ${
                   pathname === '/'
-                    ? 'text-slate-900 bg-slate-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
+                }`}
+              >
+                Home
+              </span>
+            </Link>
+            <Link href="/marketplace">
+              <span
+                className={`px-4 py-2 rounded-md font-medium transition-all cursor-pointer ${
+                  pathname === '/marketplace'
+                    ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 Marketplace
@@ -95,8 +106,8 @@ export default function Header() {
               <span
                 className={`px-4 py-2 rounded-md font-medium transition-all cursor-pointer ${
                   pathname === '/my-listings'
-                    ? 'text-slate-900 bg-slate-100'
-                    : 'text-slate-600 hover:text-slate-900 hover:bg-slate-50'
+                    ? 'text-slate-900 dark:text-white bg-slate-100 dark:bg-slate-800'
+                    : 'text-slate-600 dark:text-slate-400 hover:text-slate-900 dark:hover:text-white hover:bg-slate-50 dark:hover:bg-slate-800'
                 }`}
               >
                 My Listings
@@ -106,6 +117,7 @@ export default function Header() {
 
           {/* Wallet Connection & Mobile Menu */}
           <div className="flex items-center gap-2 md:gap-3">
+            <ThemeToggle />
             {isConnected ? (
               <>
                 <div className="hidden sm:flex items-center gap-2 px-3 py-1.5 bg-slate-100 rounded-lg">
