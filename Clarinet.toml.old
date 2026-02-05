@@ -1,0 +1,146 @@
+[project]
+name = 'Strade'
+description = ''
+authors = []
+telemetry = true
+cache_dir = './.cache'
+requirements = []
+[contracts.CoreMarketPlace]
+path = 'contracts/CoreMarketPlace.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.DisputeResolution_clar]
+path = 'contracts/DisputeResolution_clar.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.EscrowService]
+path = 'contracts/EscrowService.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.UserProfile]
+path = 'contracts/UserProfile.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.token]
+path = 'contracts/token.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.ft-trait]
+path = 'contracts/ft-trait.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.nft-trait]
+path = 'contracts/nft-trait.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.non-fungible-token]
+path = 'contracts/non-fungible-token.clar'
+clarity_version = 3
+epoch = 3.0
+[repl.analysis]
+passes = ['check_checker']
+
+[repl.analysis.check_checker]
+strict = false
+trusted_sender = false
+trusted_caller = false
+callee_filter = false
+
+[contracts.escrow]
+path = 'contracts/escrow.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.fungible-token]
+path = 'contracts/fungible-token.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.hodl-token]
+path = 'contracts/hodl-token.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.beeple]
+path = 'contracts/beeple.clar'
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+[contracts.perishable-token]
+path = 'contracts/perishable-token.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.rocket-token]
+path = 'contracts/rocket-token.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.rocket-market]
+path = 'contracts/rocket-market.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.rocket-factory]
+path = 'contracts/rocket-factory.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.license]
+path = 'contracts/license.clar'
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+[contracts.flip-coin]
+path = 'contracts/flip-coin.clar'
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0
+
+clarity_version = 3
+epoch = 3.0

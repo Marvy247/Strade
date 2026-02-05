@@ -5,6 +5,7 @@ authors = []
 telemetry = true
 cache_dir = './.cache'
 requirements = []
+
 [contracts.CoreMarketPlace]
 path = 'contracts/CoreMarketPlace.clar'
 clarity_version = 3
@@ -29,6 +30,22 @@ epoch = 3.0
 path = 'contracts/token.clar'
 clarity_version = 3
 epoch = 3.0
+
+[contracts.ft-trait]
+path = 'contracts/ft-trait.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.nft-trait]
+path = 'contracts/nft-trait.clar'
+clarity_version = 3
+epoch = 3.0
+
+[contracts.non-fungible-token]
+path = 'contracts/non-fungible-token.clar'
+clarity_version = 3
+epoch = 3.0
+
 [repl.analysis]
 passes = ['check_checker']
 

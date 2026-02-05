@@ -45,16 +45,19 @@ genesis:
       balance: "100000000000000"
       sbtc-balance: "1000000000"
   contracts:
+    - genesis
+    - lockup
+    - bns
+    - cost-voting
     - costs
     - pox
+    - costs-2
     - pox-2
+    - costs-3
     - pox-3
     - pox-4
-    - lockup
-    - costs-2
-    - costs-3
-    - cost-voting
-    - bns
+    - signers
+    - signers-voting
 plan:
   batches:
     - id: 0
@@ -78,6 +81,21 @@ plan:
             contract-name: UserProfile
             emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
             path: contracts/UserProfile.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: ft-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/ft-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: nft-trait
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/nft-trait.clar
+            clarity-version: 3
+        - emulated-contract-publish:
+            contract-name: non-fungible-token
+            emulated-sender: ST1PQHQKV0RJXZFY1DGX8MNSNYVE3VGZJSRTPGZGM
+            path: contracts/non-fungible-token.clar
             clarity-version: 3
         - emulated-contract-publish:
             contract-name: token

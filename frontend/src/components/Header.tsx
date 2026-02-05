@@ -16,15 +16,30 @@ export default function Header() {
   const [userAddress, setUserAddress] = useState<string>('');
   const [balance, setBalance] = useState<number>(0);
   const [loadingBalance, setLoadingBalance] = useState(false);
+  
+  // Function to load user data and balance
+  const loadUserData = () => {
+    if (userSession.isUserSignedIn()) {
+      const userData = userSession.loadUserData();
+      const address = userData.profile?.stxAddress?.testnet;
+      if (address) {
+        setIsConnected(true);
+        setUserAddress(address);
+        loadBalance(address);
+      }
+    } else {
+      setIsConnected(false);
+      setUserAddress('');
+      setBalance(0);
+    }
+  };
 
   useEffect(() => {
-    if (userSession.isUserSignedIn()) {
-      setIsConnected(true);
-      const userData = userSession.loadUserData();
-      const address = userData.profile.stxAddress.testnet;
-      setUserAddress(address);
-      loadBalance(address);
-    }
+    loadUserData();
+    
+    // Listen for storage changes (wallet disconnect via another tab)
+    window.addEventListener('storage', loadUserData);
+    return () => window.removeEventListener('storage', loadUserData);
   }, []);
 
   const loadBalance = async (address: string) => {
@@ -34,6 +49,7 @@ export default function Header() {
       setBalance(bal);
     } catch (error) {
       console.error('Error loading balance:', error);
+      setBalance(0);
     } finally {
       setLoadingBalance(false);
     }

@@ -1,67 +1,67 @@
 ---
 id: 0
-name: Testnet deployment
-network: testnet
-stacks-node: "https://api.testnet.hiro.so"
-bitcoin-node: "http://blockstack:blockstacksystem@bitcoind.testnet.stacks.co:18332"
+name: Mainnet deployment - PRODUCTION
+network: mainnet
+stacks-node: "https://api.hiro.so"
+bitcoin-node: "http://blockstack:blockstacksystem@bitcoin.mainnet.stacks.co:8332"
 plan:
   batches:
     - id: 0
       transactions:
         - contract-publish:
             contract-name: CoreMarketPlace
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 87570
             path: contracts/CoreMarketPlace.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
             contract-name: DisputeResolution_clar
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 109500
             path: contracts/DisputeResolution_clar.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
             contract-name: EscrowService
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 63160
             path: contracts/EscrowService.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
             contract-name: UserProfile
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 98010
             path: contracts/UserProfile.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
+            contract-name: token
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
+            cost: 69130
+            path: contracts/token.clar
+            anchor-block-only: true
+            clarity-version: 3
+        - contract-publish:
             contract-name: ft-trait
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 10000
             path: contracts/ft-trait.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
             contract-name: nft-trait
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 10000
             path: contracts/nft-trait.clar
             anchor-block-only: true
             clarity-version: 3
         - contract-publish:
             contract-name: non-fungible-token
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
+            expected-sender: SPGEE2D7NV4RJC1MHK59AN83PEN0CBBEXQSYJQGE
             cost: 150000
             path: contracts/non-fungible-token.clar
-            anchor-block-only: true
-            clarity-version: 3
-        - contract-publish:
-            contract-name: token
-            expected-sender: STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF
-            cost: 69130
-            path: contracts/token.clar
             anchor-block-only: true
             clarity-version: 3
       epoch: "3.0"

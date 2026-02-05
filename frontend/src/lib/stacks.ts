@@ -80,6 +80,10 @@ export const getListings = async (includeAll: boolean = false): Promise<Listing[
 };
 
 export const formatSTX = (microSTX: number): string => {
+  // Handle NaN, undefined, or invalid values
+  if (microSTX === null || microSTX === undefined || isNaN(microSTX) || microSTX < 0) {
+    return '0';
+  }
   return (microSTX / 1000000).toFixed(6);
 };
 
@@ -89,13 +93,28 @@ export const formatAddress = (address: string): string => {
 
 export const getUserBalance = async (address: string): Promise<number> => {
   try {
+    if (!address || typeof address !== 'string' || address.length < 10) {
+      return 0;
+    }
     const response = await fetch(
       `https://api.testnet.hiro.so/extended/v1/address/${address}/stx`
     );
+    
+    if (!response.ok) {
+      console.error('Balance API error:', response.status);
+      return 0;
+    }
+    
     const data = await response.json();
-    return Number(data.balance);
+    
+    // Handle different API response formats
+    if (data.balance !== undefined) {
+      return Number(data.balance) || 0;
+    }
+    
+    return 0;
   } catch (error) {
     console.error('Error fetching balance:', error);
     return 0;
   }
-};;
+};

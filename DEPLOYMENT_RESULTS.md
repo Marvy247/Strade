@@ -48,6 +48,27 @@
 - **Status:** ✅ Confirmed
 - **Explorer:** https://explorer.hiro.so/txid/0xa607d0c3f1d6de1b9e9ea4cacd14f737ddd60f2a9f17843a8c9c?chain=testnet
 
+### 6. ft-trait (SIP-010 Fungible Token Trait)
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.ft-trait
+- **Transaction ID:** 0xb1f5fbde5f2afef19f1a3909fbc489d812adafa33cf395119fdb
+- **Cost:** 0.010000 STX
+- **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0xb1f5fbde5f2afef19f1a3909fbc489d812adafa33cf395119fdb?chain=testnet
+
+### 7. nft-trait (SIP-009 NFT Trait)
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.nft-trait
+- **Transaction ID:** 0x09bb0f5777cb99b7d7f4a8855fec9c657a9f7a9c1fb2382a86e6
+- **Cost:** 0.010000 STX
+- **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0x09bb0f5777cb99b7d7f4a8855fec9c657a9f7a9c1fb2382a86e6?chain=testnet
+
+### 8. non-fungible-token (NFT Implementation)
+- **Contract Address:** STGEE2D7NV4RJC1MHK59AN83PEN0CBBEXNG4QQVF.non-fungible-token
+- **Transaction ID:** 0x60286c4456dcf237aaaeef6bb36156e54affd9e70d82412c666c
+- **Cost:** 0.150000 STX
+- **Status:** ✅ Confirmed
+- **Explorer:** https://explorer.hiro.so/txid/0x60286c4456dcf237aaaeef6bb36156e54affd9e70d82412c666c?chain=testnet
+
 ## Contract Details
 
 ### BST Token (token.clar)
@@ -76,6 +97,22 @@
 - **Features:** Dispute raising, arbitrator voting, resolution
 - **Voting Period:** 144 blocks (~24 hours)
 - **Minimum Votes:** 3 votes required
+
+### ft-trait (ft-trait.clar)
+- **Standard:** SIP-010 Fungible Token Trait
+- **Purpose:** Interface definition for fungible tokens
+- **Functions:** transfer, get-name, get-symbol, get-decimals, get-balance, get-total-supply, get-token-uri
+
+### nft-trait (nft-trait.clar)
+- **Standard:** SIP-009 Non-Fungible Token Trait
+- **Purpose:** Interface definition for NFTs
+- **Functions:** get-last-token-id, get-token-uri, get-owner, transfer
+
+### non-fungible-token (non-fungible-token.clar)
+- **Standard:** SIP-009 compliant NFT
+- **Features:** NFT minting, transfers, operator approvals, spender management
+- **Initial Supply:** 7 NFTs pre-minted for testing
+- **Metadata:** IPFS-based token URI support
 
 ## Verification
 

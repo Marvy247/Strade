@@ -3,6 +3,8 @@ import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { Toaster } from "@/components/ui/sonner";
 import { ThemeProvider } from "@/components/providers/ThemeProvider";
+import { ConnectProvider } from "@stacks/connect-react";
+import { userSession } from "@/lib/stacks";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -36,15 +38,23 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased h-full`}
       >
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
+        <ConnectProvider
+          userSession={userSession}
+          appDetails={{
+            name: 'Strade',
+            icon: typeof window !== 'undefined' ? window.location.origin + '/favicon.ico' : '',
+          }}
         >
-          {children}
-          <Toaster position="top-right" richColors />
-        </ThemeProvider>
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+            <Toaster position="top-right" richColors />
+          </ThemeProvider>
+        </ConnectProvider>
       </body>
     </html>
   );
