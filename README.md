@@ -8,7 +8,7 @@
 
 A secure, decentralized marketplace built on the Stacks blockchain, featuring smart contract-powered escrow, dispute resolution, and user reputation systems.
 
-## 🌟 Features
+##  Features
 
 ### Core Marketplace
 - **Create Listings**: List items for sale with customizable pricing and duration
@@ -40,7 +40,7 @@ A secure, decentralized marketplace built on the Stacks blockchain, featuring sm
 - **6 Decimals**: Precision for micro-transactions
 - **Pausable Contract**: Emergency pause functionality for security
 
-## 🏗️ Architecture
+##  Architecture
 
 ### Smart Contracts (Clarity 4)
 
@@ -65,7 +65,7 @@ frontend/
 └── public/                    # Static assets
 ```
 
-## 🚀 Getting Started
+##  Getting Started
 
 ### Prerequisites
 
@@ -132,7 +132,7 @@ npm test
 
 Visit `http://localhost:3000` to see the application.
 
-## 📋 Testnet Deployment
+##  Testnet Deployment
 
 All contracts are deployed and verified on Stacks Testnet:
 
@@ -148,7 +148,7 @@ All contracts are deployed and verified on Stacks Testnet:
 
 See [DEPLOYMENT_RESULTS.md](DEPLOYMENT_RESULTS.md) for detailed deployment information.
 
-## 🧪 Testing
+##  Testing
 
 ### Smart Contract Tests
 
@@ -184,7 +184,7 @@ npm test -- --watch
 - ✅ Fuzz Testing: 13 tests
 - ✅ All contracts verified on testnet
 
-## 🔐 Security Features
+##  Security Features
 
 - **Input Validation**: All user inputs are validated on-chain
 - **Access Control**: Function-level permissions and ownership checks
@@ -193,7 +193,7 @@ npm test -- --watch
 - **Emergency Pause**: Contract owner can pause operations if needed
 - **Expiration Handling**: Automatic expiry for listings and escrow
 
-## 📖 Documentation
+##  Documentation
 
 ### For Users
 - [User Guide](docs/USER_GUIDE.md) - How to use Strade marketplace
@@ -204,37 +204,37 @@ npm test -- --watch
 - [Frontend Integration](docs/INTEGRATION.md) - How to integrate with Strade
 - [Development Guide](docs/DEVELOPMENT.md) - Contributing guidelines
 
-## 🛣️ Roadmap
+##  Roadmap
 
-### Phase 1: Core Functionality ✅
+### Phase 1: Core Functionality 
 - [x] Smart contract development
 - [x] Basic marketplace features
 - [x] Escrow system
 - [x] User profiles
 - [x] Testnet deployment
 
-### Phase 2: Enhanced Features 🚧
+### Phase 2: Enhanced Features 
 - [ ] Advanced search and filters
 - [ ] Image upload and IPFS integration
 - [ ] Mobile-responsive design improvements
 - [ ] Real-time notifications
 - [ ] Multi-currency support
 
-### Phase 3: Scaling & Security 📋
+### Phase 3: Scaling & Security 
 - [ ] Professional security audit
 - [ ] Mainnet deployment
 - [ ] Performance optimization
 - [ ] Analytics dashboard
 - [ ] Community governance
 
-### Phase 4: Ecosystem Growth 🎯
+### Phase 4: Ecosystem Growth 
 - [ ] Mobile app (iOS/Android)
 - [ ] API for third-party integration
 - [ ] Multi-chain support
 - [ ] NFT marketplace integration
 - [ ] Advanced reputation algorithms
 
-## 🤝 Contributing
+##  Contributing
 
 We welcome contributions! Please follow these steps:
 
@@ -252,7 +252,7 @@ Please ensure:
 
 See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 
-## 📝 Smart Contract Details
+##  Smart Contract Details
 
 ### CoreMarketPlace
 - **Purpose**: Main marketplace logic for listing management
@@ -279,7 +279,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - **Functions**: `transfer`, `mint`, `burn`, `get-balance`
 - **Supply**: 1,000,000,000,000 BST (1 trillion)
 
-## 🔧 Technology Stack
+##  Technology Stack
 
 ### Blockchain
 - **Stacks Blockchain**: Layer-1 blockchain for Bitcoin
@@ -299,7 +299,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - **ESLint**: Code linting and quality
 - **Prettier**: Code formatting
 
-## 📊 Project Statistics
+##  Project Statistics
 
 - **Smart Contracts**: 5 deployed contracts
 - **Total Lines of Code**: ~1,500 Clarity + ~2,000 TypeScript
@@ -307,18 +307,18 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for detailed guidelines.
 - **Deployment Cost**: 0.427 STX
 - **Clarity Version**: 4.0 (Epoch 3.0)
 
-## 📄 License
+##  License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
+##  Acknowledgments
 
 - **Stacks Foundation** - For the amazing blockchain infrastructure
 - **Hiro Systems** - For development tools and APIs
 - **Clarity Language** - For secure smart contract development
 - **Open Source Community** - For inspiration and support
 
-## 📞 Support & Community
+##  Support & Community
 
 - **Website**: [strade.io](https://strade.io) (Coming Soon)
 - **Documentation**: [docs.strade.io](https://docs.strade.io) (Coming Soon)
@@ -326,18 +326,18 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Twitter**: [@StradeMarket](https://twitter.com/StradeMarket) (Coming Soon)
 - **Email**: support@strade.io
 
-## ⚠️ Disclaimer
+##  Disclaimer
 
 **TESTNET ONLY**: This project is currently deployed on Stacks Testnet. DO NOT use real assets or consider any transactions as having real-world value. The testnet can be reset at any time, and all data may be lost.
 
 Before mainnet deployment, a comprehensive security audit will be conducted. Use at your own risk.
 
-## 🌟 Star History
+##  Star History
 
 If you find this project useful, please consider giving it a star ⭐
 
 ---
 
-**Built with ❤️ on Stacks Blockchain**
+**Built on the Stacks Blockchain**
 
 *Empowering decentralized commerce, one transaction at a time.*

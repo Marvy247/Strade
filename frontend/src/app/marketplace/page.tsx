@@ -7,13 +7,13 @@ import ListingCard from '@/components/ListingCard';
 import CreateListingForm from '@/components/CreateListingForm';
 import TestnetBanner from '@/components/TestnetBanner';
 import { ListingGridSkeleton } from '@/components/LoadingSkeleton';
-import { getListings, userSession, Listing, contractAddress, contractName, getUserBalance } from '@/lib/stacks';
+import { getListings, userSession, Listing, contractAddress, contractName, getUserBalance, isWalletConnected, getConnectedAddress, network } from '@/lib/stacks';
 import { openContractCall } from '@stacks/connect';
 import { uintCV, stringUtf8CV } from '@stacks/transactions';
 import { toast } from 'sonner';
 import { Input } from '@/components/ui/input';
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from '@/components/ui/select';
-import { Search, AlertTriangle, ArrowUpDown } from 'lucide-react';
+import { Search, AlertTriangle, ArrowUpDown, Package } from 'lucide-react';
 
 export default function Home() {
   const [listings, setListings] = useState<Listing[]>([]);
@@ -24,9 +24,9 @@ export default function Home() {
 
   useEffect(() => {
     loadListings();
-    if (userSession.isUserSignedIn()) {
-      const userData = userSession.loadUserData();
-      setUserAddress(userData.profile.stxAddress.testnet);
+    const address = getConnectedAddress();
+    if (address) {
+      setUserAddress(address);
     }
   }, []);
 
@@ -49,7 +49,7 @@ export default function Home() {
     duration: number;
     imageUrl?: string;
   }) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!isWalletConnected()) {
       toast.error('Please connect your wallet first');
       return;
     }
@@ -66,19 +66,21 @@ export default function Home() {
       contractName,
       functionName: 'create-listing',
       functionArgs,
+      network,
       appDetails: {
         name: 'Strade',
         icon: window.location.origin + '/favicon.ico',
       },
       onFinish: (result: { txId: string; stacksTransaction: unknown }) => {
-        console.log('Transaction finished:', result);
+        toast.dismiss();
         toast.success('Listing created successfully!', {
           description: `Transaction ID: ${result.txId.slice(0, 10)}...`,
         });
-        // Reload listings after successful creation
-        setTimeout(loadListings, 3000);
+        // Reload listings immediately
+        loadListings();
       },
       onCancel: () => {
+        toast.dismiss();
         toast.info('Transaction cancelled');
       },
     };
@@ -88,12 +90,13 @@ export default function Home() {
       await openContractCall(options);
     } catch (error) {
       console.error('Error creating listing:', error);
+      toast.dismiss();
       toast.error('Failed to create listing');
     }
   };
 
   const handlePurchaseListing = async (listingId: number) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!isWalletConnected()) {
       toast.error('Please connect your wallet first');
       return;
     }
@@ -107,8 +110,11 @@ export default function Home() {
 
     // Check user balance
     try {
-      const userData = userSession.loadUserData();
-      const address = userData.profile.stxAddress.testnet;
+      const address = getConnectedAddress();
+      if (!address) {
+        toast.error('Unable to get wallet address');
+        return;
+      }
       const balance = await getUserBalance(address);
       
       if (balance < listing.price) {
@@ -129,19 +135,21 @@ export default function Home() {
       contractName,
       functionName: 'purchase-listing',
       functionArgs,
+      network,
       appDetails: {
         name: 'Strade',
         icon: window.location.origin + '/favicon.ico',
       },
       onFinish: (result: { txId: string; stacksTransaction: unknown }) => {
-        console.log('Purchase transaction finished:', result);
+        toast.dismiss();
         toast.success('Purchase successful!', {
           description: `Transaction ID: ${result.txId.slice(0, 10)}...`,
         });
-        // Reload listings after successful purchase
-        setTimeout(loadListings, 3000);
+        // Reload listings immediately
+        loadListings();
       },
       onCancel: () => {
+        toast.dismiss();
         toast.info('Purchase cancelled');
       },
     };
@@ -151,12 +159,13 @@ export default function Home() {
       await openContractCall(options);
     } catch (error) {
       console.error('Error purchasing listing:', error);
+      toast.dismiss();
       toast.error('Failed to purchase listing');
     }
   };
 
   const handleCancelListing = async (listingId: number) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!isWalletConnected()) {
       toast.error('Please connect your wallet first');
       return;
     }
@@ -168,19 +177,21 @@ export default function Home() {
       contractName,
       functionName: 'cancel-listing',
       functionArgs,
+      network,
       appDetails: {
         name: 'Strade',
         icon: window.location.origin + '/favicon.ico',
       },
       onFinish: (result: { txId: string; stacksTransaction: unknown }) => {
-        console.log('Cancel transaction finished:', result);
+        toast.dismiss();
         toast.success('Listing cancelled successfully!', {
           description: `Transaction ID: ${result.txId.slice(0, 10)}...`,
         });
-        // Reload listings after successful cancellation
-        setTimeout(loadListings, 3000);
+        // Reload listings immediately
+        loadListings();
       },
       onCancel: () => {
+        toast.dismiss();
         toast.info('Cancellation cancelled');
       },
     };
@@ -190,6 +201,7 @@ export default function Home() {
       await openContractCall(options);
     } catch (error) {
       console.error('Error cancelling listing:', error);
+      toast.dismiss();
       toast.error('Failed to cancel listing');
     }
   };
@@ -219,16 +231,16 @@ export default function Home() {
     });
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 flex flex-col transition-colors">
       <TestnetBanner />
       <Header />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
             Decentralized Marketplace
           </h1>
-          <p className="text-slate-600">
+          <p className="text-slate-600 dark:text-slate-400">
             Buy and sell goods securely using smart contracts on the Stacks blockchain
           </p>
         </div>
@@ -263,7 +275,7 @@ export default function Home() {
           </div>
 
           {filteredListings.length > 0 && (
-            <div className="text-sm text-slate-600">
+            <div className="text-sm text-slate-600 dark:text-slate-400">
               Showing {filteredListings.length} {filteredListings.length === 1 ? 'listing' : 'listings'}
             </div>
           )}
@@ -272,11 +284,12 @@ export default function Home() {
         {loading ? (
           <ListingGridSkeleton count={6} />
         ) : filteredListings.length === 0 ? (
-          <div className="text-center py-12">
-            <p className="text-slate-600">
+          <div className="text-center py-12 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
+            <Package className="h-16 w-16 mx-auto text-slate-300 dark:text-slate-600 mb-4" />
+            <p className="text-slate-600 dark:text-slate-300 text-lg font-medium">
               {searchQuery ? 'No listings match your search.' : 'No active listings found.'}
             </p>
-            <p className="text-sm text-slate-500 mt-2">
+            <p className="text-sm text-slate-500 dark:text-slate-400 mt-2">
               {searchQuery ? 'Try a different search term.' : 'Be the first to create a listing!'}
             </p>
           </div>

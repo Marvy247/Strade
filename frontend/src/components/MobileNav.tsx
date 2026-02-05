@@ -23,13 +23,13 @@ export default function MobileNav() {
       {/* Mobile Menu Button */}
       <button
         onClick={toggleMenu}
-        className="md:hidden p-2 hover:bg-slate-100 rounded-lg transition-colors"
+        className="md:hidden p-2 hover:bg-slate-100 dark:hover:bg-slate-800 rounded-lg transition-colors"
         aria-label="Toggle menu"
       >
         {isOpen ? (
-          <X className="h-6 w-6 text-slate-900" />
+          <X className="h-6 w-6 text-slate-900 dark:text-white" />
         ) : (
-          <Menu className="h-6 w-6 text-slate-900" />
+          <Menu className="h-6 w-6 text-slate-900 dark:text-white" />
         )}
       </button>
 
@@ -41,7 +41,7 @@ export default function MobileNav() {
             onClick={toggleMenu}
           />
           
-          <div className="fixed top-16 left-0 right-0 bg-white shadow-lg z-50 md:hidden border-t">
+          <div className="fixed top-16 left-0 right-0 bg-white dark:bg-slate-900 shadow-lg z-50 md:hidden border-t border-slate-200 dark:border-slate-700">
             <nav className="p-4 space-y-2">
               {navItems.map((item) => {
                 const Icon = item.icon;
@@ -54,8 +54,8 @@ export default function MobileNav() {
                     onClick={toggleMenu}
                     className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-colors ${
                       isActive
-                        ? 'bg-slate-900 text-white'
-                        : 'text-slate-700 hover:bg-slate-100'
+                        ? 'bg-gradient-to-r from-blue-600 to-purple-600 text-white'
+                        : 'text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800'
                     }`}
                   >
                     <Icon className="h-5 w-5" />

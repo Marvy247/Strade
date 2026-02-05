@@ -20,7 +20,6 @@
     "@radix-ui/react-slot": "^1.2.3",
     "@stacks/blockchain-api-client": "^8.13.1",
     "@stacks/connect": "^8.2.0",
-    "@stacks/connect-react": "^23.1.4",
     "@stacks/network": "^7.2.0",
     "@stacks/transactions": "^7.2.0",
     "class-variance-authority": "^0.7.1",

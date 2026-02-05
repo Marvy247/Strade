@@ -7,7 +7,7 @@ import Footer from '@/components/Footer';
 import TestnetBanner from '@/components/TestnetBanner';
 import ListingCard from '@/components/ListingCard';
 import { ListingGridSkeleton } from '@/components/LoadingSkeleton';
-import { getListings, userSession, Listing, contractAddress, contractName } from '@/lib/stacks';
+import { getListings, userSession, Listing, contractAddress, contractName, isWalletConnected, getConnectedAddress, network } from '@/lib/stacks';
 import { Card, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
@@ -26,15 +26,16 @@ export default function MyListings() {
   const [statusFilter, setStatusFilter] = useState<StatusFilter>('all');
 
   useEffect(() => {
-    if (!userSession.isUserSignedIn()) {
+    if (!isWalletConnected()) {
       // Redirect to home if not connected
       router.push('/');
       return;
     }
 
-    const userData = userSession.loadUserData();
-    const address = userData.profile.stxAddress.testnet;
-    loadMyListings(address);
+    const address = getConnectedAddress();
+    if (address) {
+      loadMyListings(address);
+    }
   }, [router]);
 
   const loadMyListings = async (address: string) => {
@@ -55,7 +56,7 @@ export default function MyListings() {
   };
 
   const handleCancelListing = async (listingId: number) => {
-    if (!userSession.isUserSignedIn()) {
+    if (!isWalletConnected()) {
       toast.error('Please connect your wallet first');
       return;
     }
@@ -67,21 +68,24 @@ export default function MyListings() {
       contractName,
       functionName: 'cancel-listing',
       functionArgs,
+      network,
       appDetails: {
         name: 'Strade',
         icon: window.location.origin + '/favicon.ico',
       },
       onFinish: (result: { txId: string; stacksTransaction: unknown }) => {
-        console.log('Cancel transaction finished:', result);
+        toast.dismiss();
         toast.success('Listing cancelled successfully!', {
           description: `Transaction ID: ${result.txId.slice(0, 10)}...`,
         });
-        // Reload listings after successful cancellation
-        const userData = userSession.loadUserData();
-        const address = userData.profile.stxAddress.testnet;
-        setTimeout(() => loadMyListings(address), 3000);
+        // Reload listings immediately
+        const address = getConnectedAddress();
+        if (address) {
+          loadMyListings(address);
+        }
       },
       onCancel: () => {
+        toast.dismiss();
         toast.info('Cancellation cancelled');
       },
     };
@@ -91,6 +95,7 @@ export default function MyListings() {
       await openContractCall(options);
     } catch (error) {
       console.error('Error cancelling listing:', error);
+      toast.dismiss();
       toast.error('Failed to cancel listing');
     }
   };
@@ -125,12 +130,12 @@ export default function MyListings() {
     value: number;
     color: string;
   }) => (
-    <Card className="hover:shadow-md transition-shadow">
+    <Card className="hover:shadow-lg transition-all hover:-translate-y-1 bg-white dark:bg-slate-800 border-slate-200 dark:border-slate-700">
       <CardContent className="p-6">
         <div className="flex items-center justify-between">
           <div>
-            <p className="text-sm font-medium text-slate-600">{label}</p>
-            <p className="text-3xl font-bold text-slate-900 mt-2">{value}</p>
+            <p className="text-sm font-medium text-slate-600 dark:text-slate-400">{label}</p>
+            <p className="text-3xl font-bold text-slate-900 dark:text-white mt-2">{value}</p>
           </div>
           <div className={`p-3 rounded-full ${color}`}>
             <Icon className="h-6 w-6 text-white" />
@@ -141,23 +146,23 @@ export default function MyListings() {
   );
 
   const EmptyState = () => (
-    <div className="text-center py-16 px-4">
+    <div className="text-center py-16 px-4 bg-white dark:bg-slate-800 rounded-lg shadow-sm">
       <div className="max-w-md mx-auto">
         <div className="mb-6 flex justify-center">
-          <div className="p-6 bg-slate-100 rounded-full">
-            <Package className="h-16 w-16 text-slate-400" />
+          <div className="p-6 bg-slate-100 dark:bg-slate-700 rounded-full">
+            <Package className="h-16 w-16 text-slate-400 dark:text-slate-500" />
           </div>
         </div>
-        <h3 className="text-2xl font-bold text-slate-900 mb-3">
+        <h3 className="text-2xl font-bold text-slate-900 dark:text-white mb-3">
           No listings yet
         </h3>
-        <p className="text-slate-600 mb-8">
+        <p className="text-slate-600 dark:text-slate-400 mb-8">
           Start selling on the decentralized marketplace by creating your first listing.
         </p>
         <Button 
           size="lg" 
           onClick={() => router.push('/')}
-          className="shadow-lg hover:shadow-xl transition-shadow"
+          className="shadow-lg hover:shadow-xl transition-shadow bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white border-0"
         >
           Create Your First Listing
         </Button>
@@ -194,12 +199,12 @@ export default function MyListings() {
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-slate-50 flex flex-col">
+      <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 flex flex-col transition-colors">
         <TestnetBanner />
         <Header />
         <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
           <div className="mb-8">
-            <h1 className="text-3xl font-bold text-slate-900 mb-2">My Listings</h1>
+            <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">My Listings</h1>
           </div>
           <ListingGridSkeleton count={6} />
         </main>
@@ -209,17 +214,17 @@ export default function MyListings() {
   }
 
   return (
-    <div className="min-h-screen bg-slate-50 flex flex-col">
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-blue-50/30 to-purple-50/30 dark:from-slate-950 dark:via-slate-900 dark:to-slate-900 flex flex-col transition-colors">
       <TestnetBanner />
       <Header />
 
       <main className="flex-1 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 w-full">
         {/* Page Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-slate-900 mb-2">
+          <h1 className="text-3xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent mb-2">
             My Listings
           </h1>
-          <p className="text-slate-600">
+          <p className="text-slate-600 dark:text-slate-400">
             Manage and track all your marketplace listings
           </p>
         </div>
