@@ -24,6 +24,9 @@ export const metadata: Metadata = {
     description: "Buy and sell goods securely on the blockchain",
     type: "website",
   },
+  other: {
+    "talentapp:project_verification": "66a114e9792693ac64380fd0db52b2aaaf7f519b7ef40f198de9954371a889f410db07108ca9f99b923094c081c3a30a6ae887a5eca5b6f152d84c9442cea343"
+  },
 };
 
 export default function RootLayout({
