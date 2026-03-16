@@ -227,3 +227,4 @@ export default function CreateListingForm({ onCreateListing }: CreateListingForm
 // w-full
 // flex-col
 // h-12
+// font-size: 16px
