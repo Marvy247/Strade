@@ -9,3 +9,4 @@ export function filterListings(listings: any[], filters: SearchFilters) { return
 export function sortListings(listings: any[], by: string) { return listings; }
 // sort price asc
 // sort price desc
+// sort newest
