@@ -10,3 +10,4 @@
 // togglePanel
 // dedup
 // max 50
+// shallow
