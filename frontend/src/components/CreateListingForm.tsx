@@ -224,3 +224,4 @@ export default function CreateListingForm({ onCreateListing }: CreateListingForm
     </Dialog>
   );
 }
+// w-full
