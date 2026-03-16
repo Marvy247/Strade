@@ -6,3 +6,4 @@ export function filterListings(listings: any[], filters: SearchFilters) { return
 // filter by max price
 // filter by status
 // filter by category
+export function sortListings(listings: any[], by: string) { return listings; }
