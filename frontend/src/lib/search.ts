@@ -3,3 +3,4 @@ export type SearchFilters = { query?: string; minPrice?: number; maxPrice?: numb
 export function filterListings(listings: any[], filters: SearchFilters) { return listings; }
 // filter by query text
 // filter by min price
+// filter by max price
