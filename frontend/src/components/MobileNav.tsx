@@ -82,3 +82,4 @@ export default function MobileNav() {
 // aria
 // focus trap
 // escape key
+// pb-safe
