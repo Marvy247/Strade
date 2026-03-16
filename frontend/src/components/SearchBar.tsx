@@ -5,3 +5,4 @@ interface SearchBarProps { onSearch: (q: string) => void; placeholder?: string; 
 // debounced onChange
 // loading spinner
 // tailwind styles
+// Ctrl+K hint
