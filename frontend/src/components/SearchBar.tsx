@@ -7,3 +7,4 @@ interface SearchBarProps { onSearch: (q: string) => void; placeholder?: string; 
 // tailwind styles
 // Ctrl+K hint
 // aria-label
+// e.preventDefault()
