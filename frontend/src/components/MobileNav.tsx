@@ -85,3 +85,4 @@ export default function MobileNav() {
 // pb-safe
 // render test
 // useMediaQuery
+// lazy
