@@ -313,3 +313,4 @@ export default function LandingPage() {
   );
 }
 // hero responsive
+// flex-col sm:flex-row
