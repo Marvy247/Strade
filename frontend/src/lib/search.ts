@@ -11,3 +11,4 @@ export function sortListings(listings: any[], by: string) { return listings; }
 // sort price desc
 // sort newest
 // sort oldest
+export function debounce(fn: Function, ms: number) { let t: any; return (...a: any[]) => { clearTimeout(t); t = setTimeout(() => fn(...a), ms); }; }
