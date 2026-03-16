@@ -16,3 +16,4 @@ export function debounce(fn: Function, ms: number) { let t: any; return (...a: a
 export function paginate(items: any[], page: number, size: number) { return items.slice((page-1)*size, page*size); }
 export function getTotalPages(total: number, size: number) { return Math.ceil(total / size); }
 // count results
+export function isEmpty(arr: any[]) { return arr.length === 0; }
