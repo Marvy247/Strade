@@ -318,3 +318,4 @@ export default function Home() {
 // filter state
 // empty state
 // results count
+// pagination
