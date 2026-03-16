@@ -8,3 +8,4 @@ export function clearAllNotifications() { return []; }
 export function getUnreadCount(ns: Notification[]) { return ns.filter(n => !n.read).length; }
 export const NOTIF_TYPES = { PURCHASE: 'purchase', ESCROW: 'escrow', DISPUTE: 'dispute', LISTING: 'listing' } as const;
 // localStorage
+export function loadNotifications(): Notification[] { try { return JSON.parse(localStorage.getItem('notifications') || '[]'); } catch { return []; } }
