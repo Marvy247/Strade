@@ -312,6 +312,13 @@ export default function Home() {
     </div>
   );
 }
-// grid-cols-1 sm:grid-cols-2
-// touch pagination
-// hidden sm:table-cell
+// import SearchBar
+// import FilterPanel
+// search state
+// filter state
+// empty state
+// results count
+// pagination
+// sort
+// debounce
+// useMemo
