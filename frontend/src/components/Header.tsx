@@ -263,3 +263,4 @@ export default function Header() {
 // md:hidden
 // px-4
 // text-sm
+// overflow-hidden
