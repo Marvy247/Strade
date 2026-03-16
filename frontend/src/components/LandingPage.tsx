@@ -316,3 +316,4 @@ export default function LandingPage() {
 // flex-col sm:flex-row
 // text-3xl md:text-5xl
 // grid-cols-1 md:grid-cols-3
+// stats mobile
