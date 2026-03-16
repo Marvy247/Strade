@@ -312,3 +312,4 @@ export default function LandingPage() {
     </div>
   );
 }
+// hero responsive
