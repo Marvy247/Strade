@@ -318,3 +318,4 @@ export default function LandingPage() {
 // grid-cols-1 md:grid-cols-3
 // stats mobile
 // overflow-x-auto
+// footer mobile
