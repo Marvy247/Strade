@@ -10,3 +10,4 @@ export const NOTIF_TYPES = { PURCHASE: 'purchase', ESCROW: 'escrow', DISPUTE: 'd
 // localStorage
 export function loadNotifications(): Notification[] { try { return JSON.parse(localStorage.getItem('notifications') || '[]'); } catch { return []; } }
 export function saveNotifications(ns: Notification[]) { localStorage.setItem('notifications', JSON.stringify(ns)); }
+// unit tests
