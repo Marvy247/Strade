@@ -259,3 +259,10 @@ export default function Header() {
     </header>
   );
 }
+// md:flex hidden
+// md:hidden
+// px-4
+// text-sm
+// overflow-hidden
+// skip link
+// z-50

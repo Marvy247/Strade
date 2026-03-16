@@ -95,3 +95,6 @@ export default function Footer() {
     </footer>
   );
 }
+// grid-cols-1 md:grid-cols-4
+// text-center md:text-left
+// py-8

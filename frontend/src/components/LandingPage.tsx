@@ -312,3 +312,11 @@ export default function LandingPage() {
     </div>
   );
 }
+// hero responsive
+// flex-col sm:flex-row
+// text-3xl md:text-5xl
+// grid-cols-1 md:grid-cols-3
+// stats mobile
+// overflow-x-auto
+// footer mobile
+// alt texts
