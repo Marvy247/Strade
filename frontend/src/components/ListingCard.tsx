@@ -148,3 +148,4 @@ export default function ListingCard({ listing, onPurchase, onCancel, isOwner }: 
   );
 }
 // w-full
+// aspect-ratio
