@@ -1,2 +1,3 @@
 // NotificationPanel
 // list
+// empty state
