@@ -314,3 +314,4 @@ export default function Home() {
 }
 // grid-cols-1 sm:grid-cols-2
 // touch pagination
+// hidden sm:table-cell
