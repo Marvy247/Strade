@@ -151,3 +151,4 @@ export default function ListingCard({ listing, onPurchase, onCancel, isOwner }: 
 // aspect-ratio
 // flex-col
 // min-h-[44px]
+// truncate
