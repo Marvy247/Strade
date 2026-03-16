@@ -260,3 +260,4 @@ export default function Header() {
   );
 }
 // md:flex hidden
+// md:hidden
