@@ -319,3 +319,4 @@ export default function LandingPage() {
 // stats mobile
 // overflow-x-auto
 // footer mobile
+// alt texts
