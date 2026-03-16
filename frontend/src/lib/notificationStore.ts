@@ -9,3 +9,4 @@
 // isOpen
 // togglePanel
 // dedup
+// max 50
