@@ -7,3 +7,4 @@ export function clearNotification(ns: Notification[], id: string) { return ns.fi
 export function clearAllNotifications() { return []; }
 export function getUnreadCount(ns: Notification[]) { return ns.filter(n => !n.read).length; }
 export const NOTIF_TYPES = { PURCHASE: 'purchase', ESCROW: 'escrow', DISPUTE: 'dispute', LISTING: 'listing' } as const;
+// localStorage
