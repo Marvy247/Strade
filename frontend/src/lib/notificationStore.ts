@@ -4,3 +4,4 @@
 // markAsRead
 // markAllAsRead
 // remove
+// clearAll
