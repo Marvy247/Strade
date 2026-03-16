@@ -147,3 +147,4 @@ export default function ListingCard({ listing, onPurchase, onCancel, isOwner }: 
     </Card>
   );
 }
+// w-full
