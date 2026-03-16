@@ -6,3 +6,4 @@
 // remove
 // clearAll
 // persist
+// isOpen
