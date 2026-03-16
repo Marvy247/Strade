@@ -5,3 +5,4 @@
 // markAllAsRead
 // remove
 // clearAll
+// persist
