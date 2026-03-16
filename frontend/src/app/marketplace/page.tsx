@@ -312,3 +312,13 @@ export default function Home() {
     </div>
   );
 }
+// import SearchBar
+// import FilterPanel
+// search state
+// filter state
+// empty state
+// results count
+// pagination
+// sort
+// debounce
+// useMemo

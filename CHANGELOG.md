@@ -1,1 +1,1 @@
-### Added\n- Real-time notification system
+## [Unreleased]\n### Added\n- Advanced search and filter functionality

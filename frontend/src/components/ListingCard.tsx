@@ -147,3 +147,8 @@ export default function ListingCard({ listing, onPurchase, onCancel, isOwner }: 
     </Card>
   );
 }
+// w-full
+// aspect-ratio
+// flex-col
+// min-h-[44px]
+// truncate
