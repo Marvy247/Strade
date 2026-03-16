@@ -1,1 +1,2 @@
 // FilterPanel
+// min/max price
