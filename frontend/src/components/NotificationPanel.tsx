@@ -4,3 +4,4 @@
 // mark all read
 // clear all
 // dismiss
+// type icons
