@@ -95,3 +95,4 @@ export default function Footer() {
     </footer>
   );
 }
+// grid-cols-1 md:grid-cols-4
