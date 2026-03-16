@@ -23,3 +23,4 @@ export function isEmpty(arr: any[]) { return arr.length === 0; }
 // moved types
 // exports
 // undefined guard
+// trim
