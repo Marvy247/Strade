@@ -10,3 +10,4 @@ export function sortListings(listings: any[], by: string) { return listings; }
 // sort price asc
 // sort price desc
 // sort newest
+// sort oldest
