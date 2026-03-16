@@ -314,3 +314,4 @@ export default function LandingPage() {
 }
 // hero responsive
 // flex-col sm:flex-row
+// text-3xl md:text-5xl
