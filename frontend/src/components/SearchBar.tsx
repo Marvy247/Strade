@@ -4,3 +4,4 @@ interface SearchBarProps { onSearch: (q: string) => void; placeholder?: string; 
 // clear button
 // debounced onChange
 // loading spinner
+// tailwind styles
