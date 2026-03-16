@@ -22,3 +22,4 @@ export function isEmpty(arr: any[]) { return arr.length === 0; }
 // paginate tests
 // moved types
 // exports
+// undefined guard
