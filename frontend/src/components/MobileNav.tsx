@@ -79,3 +79,4 @@ export default function MobileNav() {
 // wallet
 // theme
 // transition
+// aria
