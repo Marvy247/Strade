@@ -3,3 +3,4 @@ export type Notification = { id: string; type: string; message: string; read: bo
 export function createNotification(type: string, message: string): Notification { return { id: crypto.randomUUID(), type, message, read: false, createdAt: Date.now() }; }
 export function markAsRead(n: Notification): Notification { return { ...n, read: true }; }
 export function markAllAsRead(ns: Notification[]) { return ns.map(markAsRead); }
+export function clearNotification(ns: Notification[], id: string) { return ns.filter(n => n.id !== id); }
