@@ -76,3 +76,4 @@ export default function MobileNav() {
 // close
 // links
 // route change
+// wallet
