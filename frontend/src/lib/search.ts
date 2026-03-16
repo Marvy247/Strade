@@ -4,3 +4,4 @@ export function filterListings(listings: any[], filters: SearchFilters) { return
 // filter by query text
 // filter by min price
 // filter by max price
+// filter by status
