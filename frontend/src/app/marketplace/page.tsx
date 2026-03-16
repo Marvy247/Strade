@@ -320,3 +320,4 @@ export default function Home() {
 // results count
 // pagination
 // sort
+// debounce
