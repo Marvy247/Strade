@@ -9,3 +9,4 @@ export function getUnreadCount(ns: Notification[]) { return ns.filter(n => !n.re
 export const NOTIF_TYPES = { PURCHASE: 'purchase', ESCROW: 'escrow', DISPUTE: 'dispute', LISTING: 'listing' } as const;
 // localStorage
 export function loadNotifications(): Notification[] { try { return JSON.parse(localStorage.getItem('notifications') || '[]'); } catch { return []; } }
+export function saveNotifications(ns: Notification[]) { localStorage.setItem('notifications', JSON.stringify(ns)); }
