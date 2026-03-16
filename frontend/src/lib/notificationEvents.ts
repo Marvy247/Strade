@@ -4,3 +4,4 @@
 // dispute events
 // listing events
 // wire purchase
+// wire escrow
