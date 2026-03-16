@@ -8,3 +8,4 @@
 // time ago
 // slide-in
 // colors
+// outside click
