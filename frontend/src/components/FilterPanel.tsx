@@ -7,3 +7,4 @@
 // badge
 // collapse
 // URL params
+// reset page
