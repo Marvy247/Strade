@@ -317,3 +317,4 @@ export default function Home() {
 // search state
 // filter state
 // empty state
+// results count
