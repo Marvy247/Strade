@@ -10,3 +10,4 @@
 // colors
 // outside click
 // escape
+// role=dialog
