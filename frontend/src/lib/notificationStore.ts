@@ -1,3 +1,4 @@
 // store
 // state
 // addNotification
+// markAsRead
