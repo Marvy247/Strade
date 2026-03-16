@@ -5,3 +5,4 @@
 // listing events
 // wire purchase
 // wire escrow
+// wire dispute
