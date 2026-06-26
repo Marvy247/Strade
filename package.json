@@ -1,9 +1,8 @@
 {
-  "name": "Strade-tests",
+  "name": "strade-stx",
   "version": "1.0.0",
-  "description": "Run unit tests on this project.",
+  "description": "Stacks blockchain project for Strade - smart contracts and tooling",
   "type": "module",
-  "private": true,
   "scripts": {
     "test": "vitest run",
     "test:report": "vitest run -- --coverage --costs",
