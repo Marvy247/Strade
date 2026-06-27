@@ -1,0 +1,16 @@
+# Strade Mainnet Contracts
+
+**Deployer Address**: `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N`
+
+| Contract | Address |
+|----------|---------|
+| CoreMarketPlace | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.CoreMarketPlace` |
+| EscrowService | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.EscrowService` |
+| DisputeResolution | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.DisputeResolution_clar` |
+| UserProfile | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.UserProfile` |
+| BST Token | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.token` |
+| FT Trait | `SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N.ft-trait` |
+
+**Explorer**: https://explorer.hiro.so/address/SPB669EVRTKWYGY5GNQ7VEBZ7RF8A3K01EP6GN8N
+
+**Deployed**: 2026-03-21

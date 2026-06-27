@@ -10,6 +10,7 @@
   },
   "author": "",
   "license": "ISC",
+  "workspaces": ["contracts", "frontend", "scripts"],
 
   "dependencies": {
     "@hirosystems/clarinet-sdk": "^2.3.2",
