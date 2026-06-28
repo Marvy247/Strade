@@ -1,0 +1,50 @@
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:9:(define-constant ERR_NOT_AUTHORIZED (err u100)) ;; Error for unauthorized actions.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:10:(define-constant ERR_LISTING_NOT_FOUND (err u101)) ;; Error when a listing cannot be found.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:11:(define-constant ERR_INVALID_PRICE (err u102)) ;; Error for invalid listing prices (e.g., zero or negative).
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:12:(define-constant ERR_INVALID_SELLER (err u103)) ;; Error for invalid seller principals.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:13:(define-constant ERR_INSUFFICIENT_BALANCE (err u104)) ;; Error when a buyer has insufficient funds.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:14:(define-constant ERR_LISTING_EXPIRED (err u105)) ;; Error for expired listings.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:15:(define-constant ERR_INVALID_STATUS (err u106)) ;; Error for invalid listing statuses.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:16:(define-constant ERR_NOT_SELLER (err u107)) ;; Error when a user is not the seller of a listing.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:17:(define-constant ERR_ALREADY_PURCHASED (err u108)) ;; Error for listings that have already been sold.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:18:(define-constant ERR_INVALID_INPUT (err u109)) ;; Error for invalid input parameters.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:19:(define-constant ERR_INVALID_DURATION (err u110)) ;; Error for invalid listing durations.
+/home/marvi/Documents/Stacks/contracts/CoreMarketPlace.clar:20:(define-constant ERR_INVALID_LISTING_ID (err u111)) ;; Error for invalid listing IDs.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:9:(define-constant ERR_NOT_AUTHORIZED (err u100)) ;; Error for unauthorized actions.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:10:(define-constant ERR_DISPUTE_NOT_FOUND (err u101)) ;; Error when a dispute cannot be found.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:11:(define-constant ERR_INVALID_STATE (err u102)) ;; Error for invalid dispute states.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:12:(define-constant ERR_NOT_ARBITRATOR (err u103)) ;; Error when a user is not an authorized arbitrator.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:13:(define-constant ERR_ALREADY_VOTED (err u104)) ;; Error if an arbitrator has already voted.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:14:(define-constant ERR_VOTING_CLOSED (err u105)) ;; Error when voting on a dispute is closed.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:15:(define-constant ERR_INSUFFICIENT_VOTES (err u106)) ;; Error if there are not enough votes to resolve a dispute.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:16:(define-constant ERR_INVALID_VOTE (err u107)) ;; Error for invalid vote values.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:17:(define-constant ERR_NOT_INVOLVED_PARTY (err u108)) ;; Error when a user is not a party to the dispute.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:18:(define-constant ERR_INVALID_ESCROW_ID (err u109)) ;; Error for invalid escrow IDs.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:19:(define-constant ERR_INVALID_REASON (err u110)) ;; Error for invalid dispute reasons.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:20:(define-constant ERR_INVALID_DISPUTE_ID (err u111)) ;; Error for invalid dispute IDs.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:21:(define-constant ERR_INVALID_REWARD (err u112)) ;; Error for invalid arbitrator rewards.
+/home/marvi/Documents/Stacks/contracts/DisputeResolution_clar.clar:22:(define-constant ERR_INVALID_PRINCIPAL (err u113)) ;; Error for invalid principal addresses.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:9:(define-constant ERR_NOT_AUTHORIZED (err u100)) ;; Error for unauthorized actions.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:10:(define-constant ERR_ESCROW_NOT_FOUND (err u101)) ;; Error when an escrow cannot be found.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:11:(define-constant ERR_ALREADY_RELEASED (err u102)) ;; Error if funds have already been released.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:12:(define-constant ERR_TRANSFER_FAILED (err u103)) ;; Error for failed STX transfers.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:13:(define-constant ERR_INVALID_ESCROW_ID (err u104)) ;; Error for invalid escrow IDs.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:14:(define-constant ERR_INVALID_AMOUNT (err u105)) ;; Error for invalid transaction amounts.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:15:(define-constant ERR_INVALID_SELLER (err u106)) ;; Error for invalid seller principals.
+/home/marvi/Documents/Stacks/contracts/EscrowService.clar:16:(define-constant ERR_ESCROW_EXPIRED (err u107)) ;; Error for expired escrows.
+/home/marvi/Documents/Stacks/contracts/token.clar:12:(define-constant ERR_OWNER_ONLY (err u100)) ;; Error for actions restricted to the contract owner.
+/home/marvi/Documents/Stacks/contracts/token.clar:13:(define-constant ERR_NOT_AUTHORIZED (err u101)) ;; Error for unauthorized actions.
+/home/marvi/Documents/Stacks/contracts/token.clar:14:(define-constant ERR_INVALID_AMOUNT (err u102)) ;; Error for invalid token amounts.
+/home/marvi/Documents/Stacks/contracts/token.clar:15:(define-constant ERR_INSUFFICIENT_BALANCE (err u103)) ;; Error when a user has an insufficient token balance.
+/home/marvi/Documents/Stacks/contracts/token.clar:16:(define-constant ERR_INVALID_RECIPIENT (err u104)) ;; Error for invalid recipient addresses.
+/home/marvi/Documents/Stacks/contracts/token.clar:17:(define-constant ERR_INVALID_URI (err u105)) ;; Error for invalid token URIs.
+/home/marvi/Documents/Stacks/contracts/token.clar:18:(define-constant ERR_MAX_SUPPLY_REACHED (err u106)) ;; Error when the maximum token supply is reached.
+/home/marvi/Documents/Stacks/contracts/token.clar:19:(define-constant ERR_CONTRACT_PAUSED (err u107)) ;; Error for actions attempted while the contract is paused.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:9:(define-constant ERR_NOT_AUTHORIZED (err u100)) ;; Error for unauthorized actions.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:10:(define-constant ERR_USER_NOT_FOUND (err u101)) ;; Error when a user profile cannot be found.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:11:(define-constant ERR_INVALID_RATING (err u102)) ;; Error for invalid rating values (must be between 1 and 5).
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:12:(define-constant ERR_SELF_RATING (err u103)) ;; Error when a user attempts to rate themselves.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:13:(define-constant ERR_ALREADY_REGISTERED (err u104)) ;; Error if a user is already registered.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:14:(define-constant ERR_INVALID_INPUT (err u105)) ;; Error for invalid input parameters.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:15:(define-constant ERR_DATA_STORE_FAILURE (err u106)) ;; Error for data storage failures.
+/home/marvi/Documents/Stacks/contracts/UserProfile.clar:16:(define-constant ERR_INVALID_PRINCIPAL (err u107)) ;; Error for invalid principal addresses.

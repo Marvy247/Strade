@@ -1,6 +1,6 @@
 {
   "name": "strade-stx-test-utils",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Test utilities and helpers for Strade Clarity smart contracts",
   "license": "ISC",
   "repository": {

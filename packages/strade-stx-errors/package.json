@@ -1,6 +1,6 @@
 {
   "name": "strade-stx-errors",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Error types and constants for Strade Clarity smart contracts",
   "license": "ISC",
   "repository": {

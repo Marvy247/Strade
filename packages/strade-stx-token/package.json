@@ -1,6 +1,6 @@
 {
   "name": "strade-stx-token",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Fungible token contracts and traits for Strade marketplace on Stacks",
   "license": "ISC",
   "repository": {

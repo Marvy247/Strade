@@ -1,6 +1,6 @@
 {
   "name": "strade-stx-escrow",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Escrow service contracts for Strade marketplace on Stacks blockchain",
   "license": "ISC",
   "repository": {
