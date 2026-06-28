@@ -1,6 +1,6 @@
 {
   "name": "strade-stx",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Stacks blockchain project for Strade - smart contracts and tooling",
   "type": "module",
   "scripts": {
@@ -9,6 +9,14 @@
     "test:watch": "chokidar \"tests/**/*.ts\" \"contracts/**/*.clar\" -c \"npm run test:report\""
   },
   "author": "",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade",
   "license": "ISC",
   "workspaces": ["contracts", "frontend", "scripts"],
 

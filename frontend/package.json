@@ -1,6 +1,15 @@
 {
   "name": "strade-stx-frontend",
-  "version": "0.1.0",
+  "version": "1.0.1",
+  "files": ["package.json", ".npmignore", "dist/", "src/", "public/", "*.json", "*.ts", "*.mjs", "*.js"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade",
   "scripts": {
     "dev": "next dev",
     "build": "next build --webpack",

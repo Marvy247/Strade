@@ -1,6 +1,14 @@
 {
   "name": "strade-stx-contracts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Clarity smart contracts for Strade marketplace",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
 }

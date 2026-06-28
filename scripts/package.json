@@ -1,7 +1,15 @@
 {
   "name": "strade-stx-scripts",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Utility scripts for Strade",
   "type": "module",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
 }

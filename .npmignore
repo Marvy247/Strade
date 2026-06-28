@@ -1,2 +1,4 @@
-
-/frontend/node_modules/thread-stream/test
+contracts/
+frontend/
+scripts/
+node_modules/
