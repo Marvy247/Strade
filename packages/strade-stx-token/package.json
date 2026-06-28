@@ -1,0 +1,14 @@
+{
+  "name": "strade-stx-token",
+  "version": "1.0.0",
+  "description": "Fungible token contracts and traits for Strade marketplace on Stacks",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
+}

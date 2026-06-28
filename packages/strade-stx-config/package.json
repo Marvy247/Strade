@@ -1,0 +1,14 @@
+{
+  "name": "strade-stx-config",
+  "version": "1.0.0",
+  "description": "Deployment and network configuration for Strade on Stacks blockchain",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
+}

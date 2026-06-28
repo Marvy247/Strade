@@ -1,0 +1,14 @@
+{
+  "name": "strade-stx-escrow",
+  "version": "1.0.0",
+  "description": "Escrow service contracts for Strade marketplace on Stacks blockchain",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
+}

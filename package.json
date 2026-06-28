@@ -18,7 +18,7 @@
   },
   "homepage": "https://github.com/Marvy247/Strade",
   "license": "ISC",
-  "workspaces": ["contracts", "frontend", "scripts"],
+  "workspaces": ["contracts", "frontend", "scripts", "packages/strade-stx-escrow", "packages/strade-stx-token", "packages/strade-stx-test-utils", "packages/strade-stx-config", "packages/strade-stx-errors"],
 
   "dependencies": {
     "@hirosystems/clarinet-sdk": "^2.3.2",
