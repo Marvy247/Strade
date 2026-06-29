@@ -1,0 +1,14 @@
+{
+  "name": "strade-stx-deployment",
+  "version": "1.0.0",
+  "description": "Deployment plans and migration scripts for Strade on Stacks mainnet/testnet",
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Marvy247/Strade.git"
+  },
+  "bugs": {
+    "url": "https://github.com/Marvy247/Strade/issues"
+  },
+  "homepage": "https://github.com/Marvy247/Strade"
+}
